@@ -1,3 +1,0 @@
-latexmk -c poster.tex 2&> /dev/null
-rm -f *.log *.run.xml *.aux *.bbl
-ls
