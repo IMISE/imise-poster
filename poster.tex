@@ -1,9 +1,9 @@
 \PassOptionsToPackage{table}{xcolor}
 \documentclass[portrait,final,a0paper,fontscale=0.320]{imiseposter}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}% change to ngerman for a German poster
-\microtypecontext{spacing=nonfrench}
+%\microtypecontext{spacing=nonfrench}
 % Using biblatex and biber. It's more modern but takes more than twice as long to compile in my case. ****
 % If you use biblatex, you need to comment and uncomment the marked statements in the references as well.
 %\usepackage{csquotes}
@@ -34,6 +34,7 @@
   {This title may span one or multiple lines}
   % Authors
   {First Author{\small <first.author@imise.uni-leipzig.de>}, Another Author, Another Author}
+  {}
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
     %\includegraphics[height=9.0em]{img/medfak.pdf}
@@ -63,7 +64,9 @@ Some text~\cite{bb} and some more text~\cite{ob} and even more text~\cite{he}.
     \renewcommand{\section}[2]{}%suppress heading
     % using bibtex ***********
     \bibliographystyle{abbrv}
-    \bibliography{poster}
+    \begin{raggedright} % you can comment this out if you don't get hbox badness with justified bibliography
+	\bibliography{poster}
+	\end{raggedright}
     % using biblatex *********
     %\printbibliography
     %*************************
